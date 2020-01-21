@@ -1,10 +1,12 @@
 import { NgModule } from "@angular/core";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
-
+import { LayoutModule } from './layout/layout.module';
+import { BlankLayout } from "./layout/blank-layout/blank.component";
 const routes: Routes = [
   {
     path: "login",
-    loadChildren: "./login/login.module#LoginPageModule"
+    loadChildren: "./login/login.module#LoginPageModule",
+    component: BlankLayout
   },
   {
     path: "",
@@ -14,6 +16,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    LayoutModule,
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]

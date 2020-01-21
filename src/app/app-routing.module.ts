@@ -1,10 +1,14 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: './menu/menu.module#MenuPageModule'
+    path: "login",
+    loadChildren: "./login/login.module#LoginPageModule"
+  },
+  {
+    path: "",
+    loadChildren: "./menu/menu.module#MenuPageModule"
   }
 ];
 
@@ -14,5 +18,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-
-export class AppRoutingModule { }
+export class AppRoutingModule {}
